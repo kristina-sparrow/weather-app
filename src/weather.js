@@ -1,8 +1,8 @@
 import ui from "./ui";
 
 const weather = (() => {
-  async function getWeatherData(location) {
-    const endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=80c1fe39bd8bfceea795667cbdc7652e`;
+  async function getWeatherData(coordinates) {
+    const endpoint = `https://api.openweathermap.org/data/2.5/weather?${coordinates}&units=imperial&appid=80c1fe39bd8bfceea795667cbdc7652e`;
     try {
       const response = await fetch(endpoint, { mode: "cors" });
       if (!response.ok) throwErrorMsg();

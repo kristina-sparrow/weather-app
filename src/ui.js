@@ -1,4 +1,5 @@
 import weather from "./weather";
+import geocode from "./geocode";
 
 const ui = (() => {
   function loadHomepage() {
@@ -8,7 +9,8 @@ const ui = (() => {
   function fetchWeather() {
     const input = document.querySelector("input");
     const location = input.value;
-    weather.getWeatherData(location);
+    const coordinates = geocode.getCoordinates(location);
+    weather.getWeatherData(coordinates);
   }
 
   function displayWeather(data) {
