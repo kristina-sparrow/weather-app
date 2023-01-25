@@ -5,3 +5,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-display {
+  text-transform: capitalize;
+}
