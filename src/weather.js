@@ -5,9 +5,11 @@ const weather = (() => {
     const endpoint = `https://api.openweathermap.org/data/2.5/weather?${coordinates}&units=imperial&appid=80c1fe39bd8bfceea795667cbdc7652e`;
     try {
       const response = await fetch(endpoint, { mode: "cors" });
-      if (!response.ok) throwErrorMsg();
-      const data = await response.json();
-      const weatherData = processData(data);
+      if (!response.ok) {
+        ui.throwErrorMsg();
+        throw new Error(`Location ${coordinates} not found`);
+      }
+      const weatherData = processData(await response.json());
       ui.displayWeather(weatherData);
       ui.resetSearch();
     } catch (error) {

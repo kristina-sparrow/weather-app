@@ -39,7 +39,20 @@ const ui = (() => {
     const form = document.querySelector("form");
     form.reset();
   }
-  return { loadHomepage, displayWeather, resetSearch };
+
+  function throwErrorMsg() {
+    const error = document.querySelector(".error-msg");
+    error.style.display = error.style.display === "block" ? "none" : "block";
+    if (error.classList.contains("fade-in")) {
+      error.classList.remove("fade-in2");
+      error.offsetWidth;
+      error.classList.add("fade-in");
+    } else {
+      error.classList.add("fade-in");
+    }
+  }
+
+  return { loadHomepage, displayWeather, resetSearch, throwErrorMsg };
 })();
 
 export default ui;
