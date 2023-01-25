@@ -18,7 +18,6 @@ const geocode = (() => {
     const coordinates = `lat=${lat}&lon=${lon}`;
     return coordinates;
   }
-
   return { getCoordinates };
 })();
 

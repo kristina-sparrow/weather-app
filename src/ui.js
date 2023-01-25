@@ -3,7 +3,16 @@ import geocode from "./geocode";
 
 const ui = (() => {
   function loadHomepage() {
+    const form = document.querySelector("form");
+    const submitBtn = document.querySelector(".button-submit");
+    form.addEventListener("submit", handleSubmit);
+    submitBtn.addEventListener("click", handleSubmit);
     weather.getWeatherData(Denver);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetchWeather();
   }
 
   function fetchWeather() {
@@ -30,7 +39,7 @@ const ui = (() => {
     const form = document.querySelector("form");
     form.reset();
   }
-  return { loadHomepage, fetchWeather, displayWeather, resetSearch };
+  return { loadHomepage, displayWeather, resetSearch };
 })();
 
 export default ui;
