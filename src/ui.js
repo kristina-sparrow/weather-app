@@ -23,6 +23,10 @@ const ui = (() => {
   }
 
   function displayWeather(data) {
+    const weatherInfo = document.querySelectorAll(".info");
+    Array.from(weatherInfo).forEach((div) => {
+      div.classList.toggle("fade-in2");
+    });
     document.querySelector(".condition").textContent = data.condition;
     document.querySelector(".location").textContent = data.location;
     document.querySelector(".degrees").textContent = data.currentTemp;
@@ -40,19 +44,13 @@ const ui = (() => {
     form.reset();
   }
 
-  function throwErrorMsg() {
+  function toggleErrorMsg() {
     const error = document.querySelector(".error-msg");
     error.style.display = error.style.display === "block" ? "none" : "block";
-    if (error.classList.contains("fade-in")) {
-      error.classList.remove("fade-in2");
-      error.offsetWidth;
-      error.classList.add("fade-in");
-    } else {
-      error.classList.add("fade-in");
-    }
+    element.classList.toggle("fade-in");
   }
 
-  return { loadHomepage, displayWeather, resetSearch, throwErrorMsg };
+  return { loadHomepage, displayWeather, resetSearch, toggleErrorMsg };
 })();
 
 export default ui;

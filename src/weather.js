@@ -6,7 +6,7 @@ const weather = (() => {
     try {
       const response = await fetch(endpoint, { mode: "cors" });
       if (!response.ok) {
-        ui.throwErrorMsg();
+        ui.toggleErrorMsg();
         throw new Error(`Location ${coordinates} not found`);
       }
       const weatherData = processData(await response.json());

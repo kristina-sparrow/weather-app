@@ -6,7 +6,7 @@ const geocode = (() => {
     try {
       const response = await fetch(endpoint, { mode: "cors" });
       if (!response.ok) {
-        ui.throwErrorMsg();
+        ui.toggleErrorMsg();
         throw new Error(`Location ${location} not found`);
       }
       const coordinates = processData(await response.json());
