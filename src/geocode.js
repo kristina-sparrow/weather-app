@@ -18,10 +18,10 @@ const geocode = (() => {
   }
 
   function processData(data) {
-    const lat = data.lat;
-    const lon = data.lon;
-    const coordinates = `lat=${lat}&lon=${lon}`;
-    return coordinates;
+    const lat = data[0].lat;
+    const lon = data[0].lon;
+    const result = `lat=${lat}&lon=${lon}`;
+    return result;
   }
   return { getCoordinates };
 })();

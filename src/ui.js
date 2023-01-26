@@ -15,11 +15,9 @@ const ui = (() => {
     fetchWeather();
   }
 
-  function fetchWeather() {
-    const input = document.querySelector("input");
-    const location = input.value;
-    const coordinates = geocode.getCoordinates(location);
-    weather.getWeatherData(coordinates);
+  async function fetchWeather() {
+    const location = document.querySelector("input").value;
+    weather.getWeatherData(await geocode.getCoordinates(location));
   }
 
   function displayWeather(data) {
