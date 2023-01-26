@@ -23,14 +23,16 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  position: relative;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header {
   height: 5.5rem;
-  position: relative;
 }
 
 form {
@@ -40,14 +42,10 @@ form {
 .form-group-search {
   float: right;
   height: 80%;
-  position: relative;
   margin: 2.5rem 3.5rem 0 0;
 }
 
 .button-submit {
-  position: absolute;
-  top: 27%;
-  left: 6%;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   outline: none;
@@ -76,16 +74,12 @@ input::placeholder {
 }
 
 .error-msg {
-  display: hidden;
-  position: absolute;
-  left: 2rem;
   color: #ff3333;
   font-size: 15px;
   display: none;
 }
 
 .weather-container {
-  position: absolute;
   top: 30%;
   width: 90%;
   margin-left: 10%;
@@ -111,15 +105,11 @@ input::placeholder {
   font-size: 15rem;
   font-weight: 900;
   font-family: "Nunito", sans-serif;
-  position: relative;
 }
 
 .degrees::after {
   content: "\00B0 F";
   font-size: 3rem;
-  position: absolute;
-  top: 1.8rem;
-  left: 17.3rem;
 }
 
 .weather-details {
@@ -128,24 +118,14 @@ input::placeholder {
   font-size: 1.5rem;
   font-weight: 900;
   letter-spacing: 0.1rem;
-  position: absolute;
   border-left: 0.2rem solid rgba(255, 255, 255, 0.5);
-  top: 45%;
-  left: 22.5rem;
   height: 10rem;
   padding-left: 3.5rem;
   justify-content: space-between;
 }
 
-.feels {
-  position: relative;
-}
-
 .feels::after {
   content: "\00B0 F";
-  position: absolute;
-  bottom: 1.1rem;
-  left: 11.4rem;
   font-size: 1rem;
 }
 

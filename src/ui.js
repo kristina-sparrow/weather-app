@@ -7,7 +7,7 @@ const ui = (() => {
     const submitBtn = document.querySelector(".button-submit");
     form.addEventListener("submit", handleSubmit);
     submitBtn.addEventListener("click", handleSubmit);
-    weather.getWeatherData(Denver);
+    weather.getWeatherData("lat=39.742043&lon=-104.991531");
   }
 
   function handleSubmit(e) {
