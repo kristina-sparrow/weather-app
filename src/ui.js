@@ -7,6 +7,7 @@ const ui = (() => {
     const submitBtn = document.querySelector(".button-submit");
     form.addEventListener("submit", handleSubmit);
     submitBtn.addEventListener("click", handleSubmit);
+    // load Denver first
     weather.getWeatherData("lat=39.742043&lon=-104.991531");
   }
 
@@ -23,18 +24,18 @@ const ui = (() => {
   function displayWeather(data) {
     const weatherInfo = document.querySelectorAll(".info");
     Array.from(weatherInfo).forEach((div) => {
-      div.classList.toggle("fade-in2");
+      div.classList.toggle("fade-in-long");
     });
     document.querySelector(".condition").textContent = data.condition;
     document.querySelector(".location").textContent = data.location;
     document.querySelector(".degrees").textContent = data.currentTemp;
     document.querySelector(
       ".feels"
-    ).textContent = `Feels like: ${data.feelsLike}`;
-    document.querySelector(".wind").textContent = `Wind: ${data.wind} mph`;
+    ).textContent = `FEELS LIKE: ${data.feelsLike}`;
+    document.querySelector(".wind").textContent = `WIND: ${data.wind} MPH`;
     document.querySelector(
       ".humidity"
-    ).textContent = `Humidity: ${data.humidity}`;
+    ).textContent = `HUMIDITY: ${data.humidity}`;
   }
 
   function resetSearch() {
@@ -45,7 +46,7 @@ const ui = (() => {
   function toggleErrorMsg() {
     const error = document.querySelector(".error-msg");
     error.style.display = error.style.display === "block" ? "none" : "block";
-    element.classList.toggle("fade-in");
+    element.classList.toggle("fade-in-short");
   }
 
   return { loadHomepage, displayWeather, resetSearch, toggleErrorMsg };

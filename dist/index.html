@@ -17,24 +17,28 @@
         <form>
           <div class="form-group-search">
             <button class="button-submit">
-              <i class="fas fa-search"></i>
+              <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <input type="text" placeholder="Search city" />
+            <input type="text" placeholder="Search city..." />
             <br />
             <span class="error-msg">No matching location found!</span>
           </div>
         </form>
       </header>
-      <main class="weather-display info">
+      <main class="weather-container info">
         <div class="weather-main info">
           <p class="condition"></p>
           <h1 class="location"></h1>
-          <span class="degrees"></span>
         </div>
         <div class="weather-details info">
-          <p class="feels"></p>
-          <p class="wind"></p>
-          <p class="humidity"></p>
+          <div class="deatails-left">
+            <span class="degrees"></span>
+          </div>
+          <div class="details-right">
+            <p class="feels"></p>
+            <p class="wind"></p>
+            <p class="humidity"></p>
+          </div>
         </div>
       </main>
       <footer>

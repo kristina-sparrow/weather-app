@@ -20,12 +20,12 @@ const weather = (() => {
 
   function processData(data) {
     const myData = {
-      condition: data.weather.description,
+      condition: data.weather[0].description.toUpperCase(),
       currentTemp: Math.round(data.main.temp),
       feelsLike: Math.round(data.main.feels_like),
       humidity: data.main.humidity,
       wind: Math.round(data.wind.speed),
-      location: data.name,
+      location: data.name.toUpperCase(),
     };
     return myData;
   }
