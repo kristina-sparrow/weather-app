@@ -18,6 +18,10 @@ const ui = (() => {
 
   async function fetchWeather() {
     const location = document.querySelector("input").value;
+    if (!location) {
+      toggleErrorMsg();
+      return;
+    }
     weather.getWeatherData(await geocode.getCoordinates(location));
   }
 

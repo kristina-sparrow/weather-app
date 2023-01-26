@@ -93,6 +93,7 @@ input {
 .error-msg {
   color: var(--error-text);
   font-size: 15px;
+  padding-top: 10px;
   display: none;
 }
 
