@@ -13,6 +13,7 @@ const ui = (() => {
 
   function handleSubmit(e) {
     e.preventDefault();
+    checkErrorMsg();
     fetchWeather();
   }
 
@@ -51,6 +52,11 @@ const ui = (() => {
     const error = document.querySelector(".error-msg");
     error.style.display = error.style.display === "block" ? "none" : "block";
     element.classList.toggle("fade-in-short");
+  }
+
+  function checkErrorMsg() {
+    const error = document.querySelector(".error-msg");
+    if (error.style.display === "block") error.style.display = "none";
   }
 
   return { loadHomepage, displayWeather, resetSearch, toggleErrorMsg };
