@@ -1,4 +1,4 @@
-import ui from "./ui";
+import errorHandler from "./errorHandler";
 
 const geocode = (() => {
   async function getCoordinates(location) {
@@ -6,20 +6,19 @@ const geocode = (() => {
     try {
       const response = await fetch(endpoint, { mode: "cors" });
       if (!response.ok) {
-        ui.toggleErrorMsg();
+        errorHandler.toggleErrorMsg();
         throw new Error(`Location ${location} not found`);
       }
       const coordinates = processData(await response.json());
       return coordinates;
     } catch (error) {
-      alert(error);
       return null;
     }
   }
 
   function processData(data) {
-    const lat = data[0].lat;
-    const lon = data[0].lon;
+    const { lat } = data[0];
+    const { lon } = data[0];
     const result = `lat=${lat}&lon=${lon}`;
     return result;
   }

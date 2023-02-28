@@ -38,7 +38,10 @@
       "webpack.config.js",
       "bundle.js"
     ],
-    "rules": {}
+    "rules": {
+      "no-use-before-define": "off",
+      "consistent-return": "off"
+    }
   },
   "devDependencies": {
     "css-loader": "^6.7.3",

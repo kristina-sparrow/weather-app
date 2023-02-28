@@ -1,4 +1,5 @@
-import ui from "./ui";
+import displayHandler from "./displayHandler";
+import errorHandler from "./errorHandler";
 
 const weather = (() => {
   async function getWeatherData(coordinates) {
@@ -6,14 +7,12 @@ const weather = (() => {
     try {
       const response = await fetch(endpoint, { mode: "cors" });
       if (!response.ok) {
-        ui.toggleErrorMsg();
+        errorHandler.toggleErrorMsg();
         throw new Error(`Location ${coordinates} not found`);
       }
       const weatherData = processData(await response.json());
-      ui.displayWeather(weatherData);
-      ui.resetSearch();
+      displayHandler.displayWeather(weatherData);
     } catch (error) {
-      alert(error);
       return null;
     }
   }
